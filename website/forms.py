@@ -3,10 +3,6 @@ from wtforms import StringField, SubmitField, EmailField, PasswordField, Integer
 from wtforms.validators import DataRequired, URL, Length, Email, ValidationError
 from flask_ckeditor import CKEditorField
 
-
-
-
-
 # Custom Validators
 def length(min=-1, max=-1):
     message = 'Must be between %d and %d characters long.' % (min, max)
@@ -26,10 +22,6 @@ def validate_password(message):
         if form.password.data != field.data:
             raise ValidationError(message)
     return _validate
-
-
-# class MyForm(Form):
-#     name = StringField('Name', [InputRequired(), length(max=50)])
 
 
 # WTForm for creating a blog post
